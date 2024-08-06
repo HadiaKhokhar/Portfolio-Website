@@ -119,6 +119,22 @@ body{
 .underline,.page-links>li.active{
   border-bottom: 1px solid var(--elements-color)  ;
 }
+/* --------- Arrow Box ---------*/
+#arrow-box{
+  display:none;
+  position: relative;
+  left:25%;
+  justify-content: center;
+  align-items: center;
+  width:60px;
+  height:60px;
+  margin-top: 50px ;
+  background-color: var(--elements-color);
+
+}
+
+
+
 /* --------- Main Heading ---------*/
 .main-heading{
   font-family: var(--main-font);
@@ -130,34 +146,49 @@ body{
   color: var(--main-text-color);
 }
 /* --------- button ---------*/
-.button{
+.button-group{
+  display:flex;
+  flex-flow: row wrap;
+}
+.button {
+  display: flex;
+  align-items: center;
   background-color: var(--elements-color);
   border: 0;
   border-radius: 20px;
   color: var(--secondary-text-color);
   font-size: 15px;
   font-weight: 600;
-  padding:12px 30px;
+  padding: 12px 30px;
   margin: 0 10px;
-}  
-.button.active{
+  height: auto; 
+}
+.button-content {
+  display: flex;
+  align-items: center;
+}
+.button img {
+  margin-left: 8px;
+}
+.button.active {
   background-color: var(--main-text-color);
   margin-left: 0;
 }
-
-
 /* --------- Hero Section ---------*/
 .hero-section{
   display: flex;
   flex-direction: column;
   justify-content:space-between;
   align-items: center;
-  padding:90px 0 40px 0;
+  padding:90px 0 60px 0;
 }
+
+/* Text Section */
 .text-section{
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-self:flex-start;
 }
 .text-section>div:nth-child(1){
   width:10% ;
@@ -173,11 +204,50 @@ body{
   margin-top:0;
   font-size:35px;
 }
+
+
+/* Images Section */
 .hero-section>.image-section{
   width: 100%;
-  background-color: rgb(47, 100, 100);
   height: 100%;
+  align-self:end;
+  position: relative;
+  text-align: right;
 }
+.h-image-bg{
+  width:100%;
+}
+.h-image-body{
+  position:absolute;
+  top:34%;
+}
+.h-image-body>div{
+  display: inline-block;
+  position: relative;
+  z-index: 1; 
+}
+#h-img-shadow{
+  position: absolute;
+  bottom:20%;
+  left:0% ;
+  z-index:-1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -203,12 +273,32 @@ body{
       font-size:5vw;
       margin-bottom: 20px;
     }
-    .button{
-      margin: 10px 0;
-    }  
-    .button{
+    .button-group{
+      justify-content: space-between;
+    }
+    .hero-section .button{
+      margin: 10px 3px;
       font-size: 13px;
     }  
+    /* Hero Section */
+     /* Hero Section: Image  */
+     .h-image-body{
+      width:75%;
+      top: 43%;
+      left: 5%;
+    }
+    .h-image-body>div{
+      width:100%;
+    } 
+    #h-img{
+    width: 100%;
+
+    }
+    #h-img-shadow{
+    width: 90%;
+    }
+
+
 }
 
 /*Extra Extra Small (Mobile) */
@@ -224,18 +314,39 @@ body{
       font-size:5.1vw;
       margin-bottom: 15px;
     }
-    .button{
+    .hero-section  .button{
       margin-bottom: 5px;
-    }  
-    .button{
       font-size: 13px;
     }  
+    /* Hero Section */
+    /* Hero Section: Image  */
+     .h-image-body{
+      width:60%;
+      }
 }
 /* Small (Mobile) */
 @media (min-width: 576px) {
   .container {
       max-width: 540px;
+    } 
+    /* Hero Section */
+     /* Hero Section: Image  */
+     .h-image-body{
+      width:80%;
     }
+    .h-image-body>div{
+      width:100%;
+    } 
+    #h-img{
+    width: 100%;
+    }
+    #h-img-shadow{
+    width: 90%;
+    }
+    .hero-section  .button{
+        margin:0  10px;
+        font-size: 13px;
+      } 
 }
 
 /* Medium (Tablet) */
@@ -265,9 +376,20 @@ body{
         font-size:2.7vw;
         margin-bottom: 35px;
      }
-    .button{
+    .hero-section  .button{
       font-size: 11px;
     }  
+    /* Hero Section: Image  */
+    .h-image-body{
+      right:30%;
+    }
+    /* Arrow Buttton */
+    #arrow-box{
+      display: flex;
+    }
+    #arrow-box>img{
+      width:30%
+    }
 }
 
 /* Large (Laptop) */
@@ -287,9 +409,25 @@ body{
       font-size:3vw;
       margin-bottom: 40px;
    }
-  .button{
+  .hero-section  .button{
     font-size: 15px;
-  }  
+  } 
+  /* Hero Section: Image */ 
+  .h-image-body{
+    width:85%;
+    right:27%;
+  }
+  #h-img-shadow{
+    width: auto;
+  }
+  /* Arrow Buttton */
+  #arrow-box{
+    width:70px;
+    height:70px;
+   }
+   #arrow-box>img{
+    width:auto;
+    }
 }
 
 /* Extra Large (Desktop) */
@@ -298,10 +436,7 @@ body{
       max-width:  1140px;
     }
 
-    /* Hero Section: Text Section */
-  .hero-section>.text-section{
-     width:55% ;
-   }
+   /* Hero Section: Text Section */
    .text-section>div:nth-child(1){
     margin-right:10px;
     }
@@ -313,13 +448,29 @@ body{
       font-size:43px;
       margin-bottom: 45px;
     }
-    .button{
+    .hero-section .button{
       font-size: 15px;
-      }  
-   .hero-section>.image-section{
-    width:45%;
+      }
+      /* Hero Section: Image Section  */
+    .h-image-body>div{
+      width: auto;
     }
-    
+    .h-image-bg{
+      width: auto;
+    }
+    .h-image-body{
+      width:auto;
+      right:25%;
+    }
+     /* Arrow Buttton */
+    #arrow-box{
+      width:80px;
+      height:80px;
+      margin-top: 30px ;
+  
+    }
+   
+   
  
 }
 /* XX-Large (Large Desktop) */
@@ -327,5 +478,18 @@ body{
   .container {
       max-width: 1360px;
     }
+   /* Hero Section: Text Section */
+  .text-section>div:nth-child(1)>img{
+    margin-top: 100%; 
+  }
+  /* Arrow Buttton */
+  #arrow-box{
+    width:96px;
+    height:96px;
+    margin-top: 0;
+  
+  }
+  
+
 }
 
