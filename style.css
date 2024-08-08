@@ -132,14 +132,10 @@ body{
   background-color: var(--elements-color);
 
 }
-
-
-
 /* --------- Main Heading ---------*/
 .main-heading{
   font-family: var(--main-font);
-  margin:20px 0 ;
-  font-size:30px;
+  margin:20px 0;
   line-height: 1.1;
 }
 .main-heading span{
@@ -174,6 +170,9 @@ body{
   background-color: var(--main-text-color);
   margin-left: 0;
 }
+
+
+
 /* --------- Hero Section ---------*/
 .hero-section{
   display: flex;
@@ -190,22 +189,20 @@ body{
   flex-direction: row;
   align-self:flex-start;
 }
-.text-section>div:nth-child(1){
+.hero-section .text-section>div:nth-child(1){
   width:10% ;
   margin-right:20px;
 }
-.text-section>div:nth-child(1)>img{
+.hero-section .text-section>div:nth-child(1)>img{
   height:60%;
   margin-top: 100%; 
 }
-.text-section .main-heading{
+.hero-section  .text-section .main-heading{
   text-transform: uppercase;
   margin-bottom: 45px;
   margin-top:0;
   font-size:35px;
 }
-
-
 /* Images Section */
 .hero-section>.image-section{
   width: 100%;
@@ -214,7 +211,7 @@ body{
   position: relative;
   text-align: right;
 }
-.h-image-bg{
+.h-image-bg,.about-image-bg{
   width:100%;
 }
 .h-image-body{
@@ -233,6 +230,48 @@ body{
   z-index:-1;
 }
 
+main{
+  padding:150px 0;
+}
+
+/* --------- About me Section ---------*/
+#about-me-section{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  gap: 25px;
+  position: relative;
+}
+#about-me-section>.text-section{
+  display: block;
+}
+#about-me-section>.text-section>:nth-child(2){
+  margin:30px 0 30px 0;
+}
+#about-me-section>.text-section>:nth-child(3){
+  position: relative;
+  left:40%;
+}
+#about-me-section .main-heading+p{
+  width:100%;
+}
+
+#about-me-section .main-heading img{
+  vertical-align:bottom
+}
+#about-me-section h2{
+  display: inline;
+  margin-right: 30px;
+}
+#about-me-section>.image-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+  }
+  #about-me-section>.text-section img{
+    width: 15%;
+}
 
 
 
@@ -266,10 +305,10 @@ body{
       max-width: 95%;
     }
       /* Hero Section: Text Section */
-    .text-section>div:nth-child(1)>img{
+    .hero-section  .text-section>div:nth-child(1)>img{
       height:50%;
     }
-    .text-section .main-heading{
+    .hero-section  .text-section .main-heading{
       font-size:5vw;
       margin-bottom: 20px;
     }
@@ -292,13 +331,14 @@ body{
     } 
     #h-img{
     width: 100%;
-
     }
     #h-img-shadow{
     width: 90%;
     }
-
-
+    /* Main */
+    main .main-heading{
+      font-size:4.8vw;
+    }
 }
 
 /*Extra Extra Small (Mobile) */
@@ -307,10 +347,10 @@ body{
       max-width: 90%;
     }
     /* Hero Section: Text Section */
-    .text-section>div:nth-child(1)>img{
+    .hero-section .text-section>div:nth-child(1)>img{
       height:40%;
     }
-    .text-section .main-heading{
+    .hero-section .text-section .main-heading{
       font-size:5.1vw;
       margin-bottom: 15px;
     }
@@ -323,6 +363,8 @@ body{
      .h-image-body{
       width:60%;
       }
+  
+
 }
 /* Small (Mobile) */
 @media (min-width: 576px) {
@@ -347,8 +389,11 @@ body{
         margin:0  10px;
         font-size: 13px;
       } 
+    /* Main  */
+     main .main-heading{
+      font-size:4.3vw;
+    }
 }
-
 /* Medium (Tablet) */
 @media (min-width: 768px) {
   .container {
@@ -365,14 +410,14 @@ body{
     .hero-section>.image-section{
       width:45%;
     }
-    .text-section>div:nth-child(1){
+    .hero-section  .text-section>div:nth-child(1){
       margin-right:12px;
     }
-    .text-section>div:nth-child(1)>img{
+    .hero-section .text-section>div:nth-child(1)>img{
       height:50%;
       margin-top: 100%; 
     }
-    .text-section .main-heading{
+     .hero-section .text-section .main-heading{
         font-size:2.7vw;
         margin-bottom: 35px;
      }
@@ -390,22 +435,46 @@ body{
     #arrow-box>img{
       width:30%
     }
-}
-
+    /* Main  */
+    main .main-heading{
+      font-size:2.6vw;
+    }
+    /* About me Section */
+    #about-me-section{
+      flex-direction:row;
+      gap: 0;
+    }
+     /* About me Section: Text Section */
+     #about-me-section>.text-section{
+      width:45% ;
+    }
+    #about-me-section>.text-section img{
+      width: auto;
+    }
+    #about-me-section .main-heading+p{
+      width:80%;
+    }
+    #about-me-section>.text-section>:nth-child(2) {
+      margin-bottom:90px;
+    }
+    /* About me Section: Image  */
+    #about-me-section>.image-section{
+      width:53%;
+    }  
+  }
 /* Large (Laptop) */
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
       /* Hero Section: Text Section */
-  .text-section>div:nth-child(1){
+  .hero-section .text-section>div:nth-child(1){
     margin-right:15px;
   }
-
-  .text-section>div:nth-child(1)>img{
+  .hero-section .text-section>div:nth-child(1)>img{
     height:55%;
   }
-  .text-section .main-heading{
+  .hero-section  .text-section .main-heading{
       font-size:3vw;
       margin-bottom: 40px;
    }
@@ -428,30 +497,34 @@ body{
    #arrow-box>img{
     width:auto;
     }
-}
+  /* Main  */
+    main .main-heading{
+      font-size:3.2vw;
+  }
 
+   
+}
 /* Extra Large (Desktop) */
 @media (min-width: 1200px) {
   .container {
       max-width:  1140px;
     }
-
    /* Hero Section: Text Section */
-   .text-section>div:nth-child(1){
+   .hero-section .text-section>div:nth-child(1){
     margin-right:10px;
     }
-   .text-section>div:nth-child(1)>img{
+    .hero-section .text-section>div:nth-child(1)>img{
     height:70%;
     margin-top: 125%; 
     }
-    .text-section .main-heading{
+    .hero-section .text-section .main-heading{
       font-size:43px;
       margin-bottom: 45px;
     }
     .hero-section .button{
       font-size: 15px;
       }
-      /* Hero Section: Image Section  */
+    /* Hero Section: Image Section  */
     .h-image-body>div{
       width: auto;
     }
@@ -469,9 +542,10 @@ body{
       margin-top: 30px ;
   
     }
-   
-   
- 
+    /* Main  */
+    main .main-heading{
+      font-size: 35px;
+    }
 }
 /* XX-Large (Large Desktop) */
 @media (min-width: 1600px) {
@@ -479,7 +553,7 @@ body{
       max-width: 1360px;
     }
    /* Hero Section: Text Section */
-  .text-section>div:nth-child(1)>img{
+   .hero-section  .text-section>div:nth-child(1)>img{
     margin-top: 100%; 
   }
   /* Arrow Buttton */
@@ -487,9 +561,6 @@ body{
     width:96px;
     height:96px;
     margin-top: 0;
-  
   }
-  
-
 }
 
