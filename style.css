@@ -214,7 +214,7 @@ body{
 .h-image-bg,.about-image-bg{
   width:100%;
 }
-.h-image-body{
+.h-image-body,.about-image-body{
   position:absolute;
   top:34%;
 }
@@ -223,7 +223,7 @@ body{
   position: relative;
   z-index: 1; 
 }
-#h-img-shadow{
+#h-img-shadow,#about-img-shadow{
   position: absolute;
   bottom:20%;
   left:0% ;
@@ -239,6 +239,7 @@ main{
   display: flex;
   flex-direction:column;
   justify-content: space-between;
+  align-items:start;
   gap: 25px;
   position: relative;
 }
@@ -252,8 +253,18 @@ main{
   position: relative;
   left:40%;
 }
-#about-me-section .main-heading+p{
+#about-me-section .content{
   width:100%;
+}
+#text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+#read-more {
+  font-weight: 600;
+  cursor: pointer;
 }
 
 #about-me-section .main-heading img{
@@ -263,16 +274,28 @@ main{
   display: inline;
   margin-right: 30px;
 }
-#about-me-section>.image-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   
-  }
-  #about-me-section>.text-section img{
+#about-me-section>.text-section img{
     width: 15%;
 }
-
+/* Image Section */
+#about-me-section>.image-section{
+  display: flex;
+  position: relative;
+  margin-top: 70px;
+}
+.about-image-body{
+  top:50%;
+  left: 15%;
+}
+#about-img-zz{
+  position: absolute;
+  left:25%;
+  top: 3%;
+  width:8%;
+}
+#about-img-shadow{
+  bottom:-2%;
+}
 
 
 
@@ -321,7 +344,7 @@ main{
     }  
     /* Hero Section */
      /* Hero Section: Image  */
-     .h-image-body{
+    .h-image-body{
       width:75%;
       top: 43%;
       left: 5%;
@@ -339,6 +362,15 @@ main{
     main .main-heading{
       font-size:4.8vw;
     }
+    /* About Me Section */
+    /* Image Sectoion */
+    .about-image-body{
+      left: 9%;
+    }
+    #about-img,#about-img-shadow{
+      width: 85%;
+    }
+    
 }
 
 /*Extra Extra Small (Mobile) */
@@ -363,6 +395,10 @@ main{
      .h-image-body{
       width:60%;
       }
+    /* Main */
+      main{
+      padding: 50px 0;
+      }
   
 
 }
@@ -382,7 +418,7 @@ main{
     #h-img{
     width: 100%;
     }
-    #h-img-shadow{
+    #h-img-shadow,#about-img-shadow{
     width: 90%;
     }
     .hero-section  .button{
@@ -444,23 +480,25 @@ main{
       flex-direction:row;
       gap: 0;
     }
-     /* About me Section: Text Section */
-     #about-me-section>.text-section{
+    /*Text Section */
+    #about-me-section>.text-section{
       width:45% ;
     }
-    #about-me-section>.text-section img{
-      width: auto;
-    }
-    #about-me-section .main-heading+p{
+    #about-me-section .content{
       width:80%;
     }
     #about-me-section>.text-section>:nth-child(2) {
       margin-bottom:90px;
     }
-    /* About me Section: Image  */
+    /*Image Section */
     #about-me-section>.image-section{
       width:53%;
-    }  
+      margin-top: 70px;
+    }
+    #about-img,#about-img-shadow{
+      width:90%;
+    }
+
   }
 /* Large (Laptop) */
 @media (min-width: 992px) {
@@ -486,7 +524,7 @@ main{
     width:85%;
     right:27%;
   }
-  #h-img-shadow{
+  #h-img-shadow,#about-img-shadow{
     width: auto;
   }
   /* Arrow Buttton */
@@ -501,8 +539,15 @@ main{
     main .main-heading{
       font-size:3.2vw;
   }
-
-   
+   /* About me Section */
+   /* Text Section */
+  #about-me-section>.text-section img{
+    width: auto;
+  }
+   /* Image Section */
+  #about-img-zz{
+    width: auto;
+  } 
 }
 /* Extra Large (Desktop) */
 @media (min-width: 1200px) {
@@ -546,6 +591,12 @@ main{
     main .main-heading{
       font-size: 35px;
     }
+    /* About Me Section */
+    /* :Image Section */
+    #about-img,#about-img-shadow{
+      width: auto;
+      
+    }
 }
 /* XX-Large (Large Desktop) */
 @media (min-width: 1600px) {
@@ -561,6 +612,12 @@ main{
     width:96px;
     height:96px;
     margin-top: 0;
+  }
+  /* Main */
+  /* About me Section /*
+  /* Image Section */ *
+  .about-image-body{
+    left: 12%;
   }
 }
 
