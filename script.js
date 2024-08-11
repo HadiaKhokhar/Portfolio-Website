@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to reset all button backgrounds
   function resetButtonBackgrounds() {
       buttonlist.forEach(function(button) {
-          button.style.backgroundColor = 'rgb(57, 62, 70)';  // Reset to default color
+          button.style.backgroundColor = 'rgb(57, 62, 70,0.5)';  // Reset to default color
       });  // Corrected placement of the closing brace
   }
    // For active button
