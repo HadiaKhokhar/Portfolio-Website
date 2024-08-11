@@ -40,8 +40,8 @@ body{
     padding:0 15px ;
 }
 .padding{
-  padding-left:18px ;
-  padding-right:18px ;
+  padding-top:18px ;
+  padding-bottom:18px ;
 }
 .margin{
   margin-left:18px ;
@@ -232,6 +232,9 @@ body{
 
 main{
   padding:150px 0;
+  display: flex;
+  flex-direction: column;
+  gap:120px;
 }
 
 /* --------- About me Section ---------*/
@@ -259,7 +262,7 @@ main{
 #text {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Limit to 3 lines */
+  -webkit-line-clamp: 5; /* Limit to 5 lines */
   -webkit-box-orient: vertical;
 }
 #read-more {
@@ -297,18 +300,45 @@ main{
   bottom:-2%;
 }
 
+.underline.padding{
+  margin-top: 60px;
+}
+/* --------- Work Section ---------*/
+#work-section{
+  background-image: url(Assets/Images/work-bg.png);
+  padding: 200px 0;
+}
+#button-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#card-group{
+  display: flex;
+  justify-content:space-between;
+  margin-top: 48px;
+  flex-wrap:wrap;
+  gap: 50px;
+}
+.card{
+  width:100%;
+  height:350px;
+  border-radius: 16px;
+  background-color:rgb(52, 62, 70,0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgb(0, 0, 0,0.25));
+}
+.card >img{
+  width: 250px;
+  filter: drop-shadow(0px 4px 4px rgb(0, 0, 0,0.25));
+}
 
 
 
@@ -359,6 +389,11 @@ main{
     width: 90%;
     }
     /* Main */
+      main{
+        padding:60px 0;
+        gap:100px;
+      }
+    
     main .main-heading{
       font-size:4.8vw;
     }
@@ -370,9 +405,18 @@ main{
     #about-img,#about-img-shadow{
       width: 85%;
     }
+    .underline.padding{
+      margin-top: 30px;
+    }
+    /* Work Section */
+    #work-section .button{
+      margin: 0;
+    }
+    .card >img{
+      width: 200px;
+    }
     
 }
-
 /*Extra Extra Small (Mobile) */
 @media (max-width: 375px) {
   .container {
@@ -395,11 +439,21 @@ main{
      .h-image-body{
       width:60%;
       }
-    /* Main */
+      /* Main */
       main{
-      padding: 50px 0;
+      padding:5px 0;
+      gap:60px;
       }
-  
+      /* Work Section */
+      .underline.padding{
+        margin-top:10px;
+      }
+      
+      .card{
+        height:250px;
+      }
+      
+
 
 }
 /* Small (Mobile) */
@@ -472,6 +526,10 @@ main{
       width:30%
     }
     /* Main  */
+    main{
+      gap:140px;
+    }
+    
     main .main-heading{
       font-size:2.6vw;
     }
@@ -498,6 +556,16 @@ main{
     #about-img,#about-img-shadow{
       width:90%;
     }
+    /* Work Section */
+    .underline.padding{
+      margin-top:0;
+    }
+    .card{
+      width:318px;
+      height:250px;
+    }
+    
+    
 
   }
 /* Large (Laptop) */
@@ -548,6 +616,11 @@ main{
   #about-img-zz{
     width: auto;
   } 
+   /* Work Section */
+  .card{
+    width:408px;
+    height:290px;
+  }
 }
 /* Extra Large (Desktop) */
 @media (min-width: 1200px) {
@@ -595,7 +668,15 @@ main{
     /* :Image Section */
     #about-img,#about-img-shadow{
       width: auto;
-      
+    }
+    /* Work Section */
+    #card-group{
+      flex-wrap: nowrap;
+    } 
+
+    .card{
+      width:358px;
+      height:260px;
     }
 }
 /* XX-Large (Large Desktop) */
@@ -618,6 +699,11 @@ main{
   /* Image Section */ *
   .about-image-body{
     left: 12%;
+  }
+  /* Work sectiion */
+  .card{
+    width:398px;
+    height:300px;
   }
 }
 
