@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var uiCard = document.getElementById('ui-card');
   var webDesigncard = document.getElementById('web-design-card');
   var buttonlist = [allBtn, uiBtn, uxBtn, webDesignBtn];
+  allBtn.style.backgroundColor = 'rgb(0, 173, 181)'
 
   // Function to reset all button backgrounds
   function resetButtonBackgrounds() {
@@ -77,3 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
         readMore.textContent = "Read More";
     }
 }
+
+
+window.addEventListener('scroll', function() {
+  var heroSection = document.querySelector('.hero-section'); // Select the main section
+  var navbox = document.querySelector('#nav');
+  var heroSectionBottom = heroSection.getBoundingClientRect().bottom;
+  var viewportWidth = window.innerWidth;
+
+  if (heroSectionBottom < 0 && viewportWidth < 575)  { // When the top of the about me section goes above the viewport
+      navbox.style.display = 'flex';
+  } else {
+      navbox.style.display = 'none';
+  }
+
+});
+

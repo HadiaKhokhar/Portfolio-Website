@@ -28,6 +28,9 @@ html{
 a{
   color: inherit;
 }
+li{
+  list-style-type: none;
+}
 /* For Body */
 body{
   background-color:var(--bg-color);
@@ -65,7 +68,7 @@ body{
   display: none;
   cursor: pointer;
 }
-.page-links{
+header .page-links{
   list-style: none;
   display:flex;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -73,7 +76,7 @@ body{
   transform: translateY(0);
 }
 /*  */
-.page-links>li.active, .page-links>li:hover{
+header .page-links>li.active,header .page-links>li:hover{
   color:var(--main-text-color);
   border-color: var(--main-text-color)!important
 }
@@ -81,7 +84,7 @@ body{
 @media (max-width: 767.98px) {
 
   /* FOR MENU */
-  .page-links {
+  header .page-links {
       display: none;
       flex-direction: column;
       position: absolute;
@@ -95,12 +98,12 @@ body{
       transition: opacity 0.5s ease, transform 0.5s ease;
       transform: translateY(-20px);
   }
-  .page-links li {
+  header .page-links li {
       margin:10px 0 10px 5px;
       padding: 0;
      
   }
-  .page-links.active {
+  header .page-links.active {
       display: flex;
       opacity: 1;
       transform: translateY(0);
@@ -119,7 +122,7 @@ body{
 }
 
 /* --------- Underline ---------*/
-.underline,.page-links>li.active{
+.underline,header .page-links>li.active{
   border-bottom: 1px solid var(--elements-color)  ;
 }
 /* --------- Arrow Box ---------*/
@@ -233,7 +236,7 @@ body{
 }
 
 main{
-  padding:150px 0;
+  padding:150px 0 0  0;
   display: flex;
   flex-direction: column;
   gap:120px;
@@ -431,6 +434,73 @@ textarea::placeholder , .input{
   color:rgb(238, 238, 238,0.5);
   font-size: 18px;
 }
+/* --------- Footer ---------*/
+
+/* --------- Page and Social link Section ---------*/
+#links-section{
+padding: 100px 0;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ gap: 60px;
+}
+#links-section>.page-links, .social-links{
+  width:450px;
+  display:none;
+  justify-content: space-between;
+}
+#links-section>.page-links a{
+  display:flex ;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.social-links{
+  display: flex;
+  width:300px;
+}
+.social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width:48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color:var(--elements-color) ;
+}  
+.social-links a:hover{
+  background-color: var(--main-text-color);
+}
+
+/* Navigation box  */
+ #nav{
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  z-index: 2;
+}
+#navbox{
+  width:65px;
+  height:65px;
+  padding: 20px;
+  border-radius:12px;
+  color: white;
+  background-color:rgba(27, 28, 29, 0.8);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  justify-content:center;
+  align-content: center;
+}
+
+
+
+
+
+
+
 /*--------- BREAKPOINTS --------- */
 
 /* Extra Small (Mobile) */
@@ -506,7 +576,10 @@ textarea::placeholder , .input{
     left:25%;
     width: 40%;
   } 
-    
+  /* Links Section */
+  #links-section{
+    padding:30px 0 30px 0
+    } 
 }
 /*Extra Extra Small (Mobile) */
 @media (max-width: 375px) {
@@ -578,6 +651,10 @@ textarea::placeholder , .input{
     /* Main  */
      main .main-heading{
       font-size:4.3vw;
+    }
+     /* footer  */
+     #links-section .page-links{
+      display: flex;
     }
 }
 /* Medium (Tablet) */
@@ -684,8 +761,9 @@ textarea::placeholder , .input{
       width: auto;
     }
     #form-box{
-      margin: 80px 0;
+      margin: 80px 0 30px 0;
     }
+   
   }
 /* Large (Laptop) */
 @media (min-width: 992px) {
@@ -764,7 +842,7 @@ textarea::placeholder , .input{
       margin-left:10px;
     } 
     #form-box{
-      margin: 100px 0;
+      margin-top: 100px;
     }
 
 }
