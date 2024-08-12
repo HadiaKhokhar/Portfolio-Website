@@ -79,18 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
+window.addEventListener('DOMContentLoaded', function() {
+  var navbox = document.getElementById("nav");
+  navbox.style.display = 'none';
 
-window.addEventListener('scroll', function() {
-  var heroSection = document.querySelector('.hero-section'); // Select the main section
-  var navbox = document.querySelector('#nav');
-  var heroSectionBottom = heroSection.getBoundingClientRect().bottom;
-  var viewportWidth = window.innerWidth;
+  window.addEventListener('scroll', function() {
+      var heroSection = document.querySelector('.hero-section'); // Select the main section
+      var heroSectionBottom = heroSection.getBoundingClientRect().bottom;
+      var viewportWidth = window.innerWidth;
 
-  if (heroSectionBottom < 0 && viewportWidth < 575)  { // When the top of the about me section goes above the viewport
-      navbox.style.display = 'flex';
-  } else {
-      navbox.style.display = 'none';
-  }
-
-});
+      if (heroSectionBottom < 0 && viewportWidth < 575) { // When the hero section is out of view and viewport is less than 575px
+          navbox.style.display = 'flex';
+      } else {
+          navbox.style.display = 'none';
+      }
+  });
+});;
 

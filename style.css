@@ -478,7 +478,6 @@ padding: 100px 0;
   position: fixed;
   bottom:20px;
   right:20px;
-  display:flex;
   z-index: 2;
 }
 #navbox{
