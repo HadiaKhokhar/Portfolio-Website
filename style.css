@@ -22,6 +22,9 @@
   box-sizing:border-box ;  
   text-decoration: none;
 }
+html{
+  scroll-behavior: smooth;
+}
 a{
   color: inherit;
 }
@@ -167,10 +170,9 @@ body{
   margin-left: 8px;
 }
 .button.active {
-  background-color: var(--main-text-color);
+  background-color: var(--main-text-color) !important;
   margin-left: 0;
 }
-
 
 
 /* --------- Hero Section ---------*/
@@ -246,7 +248,7 @@ main{
   gap: 25px;
   position: relative;
 }
-#about-me-section>.text-section{
+#about-me-section>.text-section,#contact-us-section>.text-section{
   display: block;
 }
 #about-me-section>.text-section>:nth-child(2){
@@ -315,6 +317,7 @@ main{
   margin-top: 25px;
 }
 #button-group .button{
+  background-color:  rgb(57, 62, 70,0.5);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
@@ -342,6 +345,40 @@ main{
   width: 250px;
   filter: drop-shadow(0px 4px 4px rgb(0, 0, 0,0.25));
 }
+
+/* --------- Contact us Section ---------*/
+#contact-us-section{
+  width: 100%;
+  display: flex;
+  z-index: 1;
+}
+/* Image Section */
+#contact-us-section .image-section{
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  align-self: center;
+}
+#c-arrow{
+  position: relative;
+  bottom: 130px;
+}
+#c-shadow{
+  position: relative;
+  display: block;
+  z-index: -1;
+  bottom:15px ;
+  left:30%;
+  width: 35%;
+} 
+#contact-us-image{
+ position: relative;
+ left: 10%;
+}
+.contact-us-icons{
+  width:20%;
+}
+/* Form Section */
 
 
 
@@ -392,32 +429,41 @@ main{
     width: 90%;
     }
     /* Main */
-      main{
-        padding:60px 0;
-        gap:100px;
-      }
+  main{
+    padding:60px 0;
+    gap:100px;
+  }
     
-    main .main-heading{
-      font-size:4.8vw;
-    }
-    /* About Me Section */
-    /* Image Sectoion */
-    .about-image-body{
-      left: 9%;
-    }
-    #about-img,#about-img-shadow{
-      width: 85%;
-    }
-    .underline.padding{
-      margin-top: 30px;
-    }
-    /* Work Section */
-    #work-section .button{
-      margin: 0;
-    }
-    .card >img{
-      width: 200px;
-    }
+  main .main-heading{
+    font-size:4.8vw;
+  }
+  /* About Me Section */
+  /* Image Sectoion */
+  .about-image-body{
+    left: 9%;
+  }
+  #about-img,#about-img-shadow{
+    width: 85%;
+  }
+  .underline.padding{
+    margin-top: 30px;
+  }
+  /* Work Section */
+  #work-section .button{
+    margin: 0;
+  }
+  .card >img{
+    width: 200px;
+  }
+  /* Contact us Section */
+  #contact-us-image{
+    width: 50%;
+    left:8%;
+  }
+  #c-shadow{
+    left:25%;
+    width: 40%;
+  } 
     
 }
 /*Extra Extra Small (Mobile) */
@@ -455,9 +501,14 @@ main{
       .card{
         height:250px;
       }
-      
-
-
+      /* Contact us Section */
+    #contact-us-image{
+      width: 55%;
+      left:5%;
+    }
+    #c-shadow{
+     bottom: 12px;
+    } 
 }
 /* Small (Mobile) */
 @media (min-width: 576px) {
@@ -564,10 +615,31 @@ main{
       margin-top:0;
     }
     .card{
-      width:318px;
+      width:318px; 
       height:250px;
     }
+    /* Contact us section */
+    #contact-us-section .text-section{
+      width:50%;
+    }
+    #contact-us-section .form-section{
+      width:50%;
+    }
+    #c-arrow{
+      top: -120px;
+    }
+    #contact-us-image{
+      width: 60%;
+      left: 2%;
+    }
+    .contact-us-icons{
+      width: 30%;
+    }
+    #c-shadow{
+      width: auto;
+    }
     
+
     
 
   }
@@ -624,6 +696,20 @@ main{
     width:408px;
     height:290px;
   }
+   /* Contact us Section  */
+  #c-arrow{
+    top:-150px;
+  } 
+  .contact-us-icons{
+    width: auto;
+  }
+  #contact-us-image{
+    position:static;
+    width: auto
+  }
+  #c-shadow{
+    left:34%;
+  } 
 }
 /* Extra Large (Desktop) */
 @media (min-width: 1200px) {
@@ -676,12 +762,16 @@ main{
     #card-group{
       flex-wrap: nowrap;
     } 
-
     .card{
       width:358px;
       height:260px;
     }
-}
+    /* Contact us Section  */
+    #c-shadow{
+      left:28%;
+    }
+
+  }
 /* XX-Large (Large Desktop) */
 @media (min-width: 1600px) {
   .container {
@@ -708,5 +798,11 @@ main{
     width:398px;
     height:300px;
   }
+  /* Conatct us */
+  #c-shadow{
+    left:23%;
+  }
+
+  
 }
 
