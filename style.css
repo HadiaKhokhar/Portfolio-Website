@@ -350,14 +350,20 @@ main{
 #contact-us-section{
   width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   z-index: 1;
 }
-/* Image Section */
+/* Text Section */
+#contact-us-section .text-section{
+  align-self: center;
+}
 #contact-us-section .image-section{
   width: 100%;
   height: auto;
   margin-top: 50px;
-  align-self: center;
+  margin: auto 0;
+  
 }
 #c-arrow{
   position: relative;
@@ -372,23 +378,59 @@ main{
   width: 35%;
 } 
 #contact-us-image{
- position: relative;
- left: 10%;
+  position: relative;
+  left: 10%;
+  margin-top: 30px;
 }
 .contact-us-icons{
   width:20%;
 }
 /* Form Section */
+.form-section{
+  width: 100%;
+}
+#c-news{
+  position: relative;
+  left:20%;
+}
+#c-mail{
+  position: relative;
+  left:75%;
+}
+#form-box{
+  width: 100%;
+  margin: 50px 0;
+}
+#form-box label{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#form-box>div{
+  width:100%;
+  display: inline-block;
+  margin-bottom: 30px;
+} 
+.input{
+  width: 100%;
+  border:0;
+  height:59px;
+  border-radius: 16px;
+  background-color:rgb(57, 62, 70,0.5);
+  padding-left: 15px
+}
 
-
-
-
-
-
-
-
-
-
+textarea.input{
+  padding: 15px;
+  height:280px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  resize: none;
+}
+textarea::placeholder , .input{
+  color:rgb(238, 238, 238,0.5);
+  font-size: 18px;
+}
 /*--------- BREAKPOINTS --------- */
 
 /* Extra Small (Mobile) */
@@ -619,6 +661,9 @@ main{
       height:250px;
     }
     /* Contact us section */
+    #contact-us-section{
+      flex-direction: row;
+    }
     #contact-us-section .text-section{
       width:50%;
     }
@@ -638,10 +683,9 @@ main{
     #c-shadow{
       width: auto;
     }
-    
-
-    
-
+    #form-box{
+      margin: 80px 0;
+    }
   }
 /* Large (Laptop) */
 @media (min-width: 992px) {
@@ -697,6 +741,7 @@ main{
     height:290px;
   }
    /* Contact us Section  */
+   /* Text Section */
   #c-arrow{
     top:-150px;
   } 
@@ -710,6 +755,18 @@ main{
   #c-shadow{
     left:34%;
   } 
+    /* Contactus Section */
+      /* form Section */
+    #form-box>div{
+    width:48%;
+    } 
+    #form-box>div:nth-child(2){
+      margin-left:10px;
+    } 
+    #form-box{
+      margin: 100px 0;
+    }
+
 }
 /* Extra Large (Desktop) */
 @media (min-width: 1200px) {
